@@ -23,15 +23,5 @@
         ["modifyvm", "{{.Name}}", "--memory", "2048"]
       ]
     }]
-    // "provisioners": [
-    //     {
-    //       "type": "ansible",
-    //       "extra_arguments": [
-    //         "--connection=chroot",
-    //         "--inventory-file=/mnt/packer-amazon-chroot,"
-    //       ],
-    //       "playbook_file": "main.yml"
-    //     }
-    //   ]
   }
   
