@@ -1,0 +1,37 @@
+{
+    "builders": [{
+      "type": "virtualbox-iso",
+      "guest_os_type": "RedHat_64",
+      "iso_url": "CentOS-7-x86_64-DVD-1810.iso",
+      "iso_checksum": "6d44331cc4f6c506c7bbe9feb8468fad6c51a88ca1393ca6b8b486ea04bec3c1",
+      "iso_checksum_type": "sha256",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "1500s",
+      "boot_command": [
+        "<esc>",
+        "<wait>linux inst.ks=hd:/dev/fd0:ks.cfg<enter>"
+      ],
+      "boot_wait": "5s",
+      "disk_size": 210000,
+      "floppy_files": [
+        "ks.cfg"
+      ],
+      "hard_drive_interface": "sata",
+      "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now",
+      "vboxmanage": [
+        ["modifyvm", "{{.Name}}", "--memory", "2048"]
+      ]
+    }]
+    // "provisioners": [
+    //     {
+    //       "type": "ansible",
+    //       "extra_arguments": [
+    //         "--connection=chroot",
+    //         "--inventory-file=/mnt/packer-amazon-chroot,"
+    //       ],
+    //       "playbook_file": "main.yml"
+    //     }
+    //   ]
+  }
+  
