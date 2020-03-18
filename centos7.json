@@ -8,6 +8,7 @@
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "1500s",
+      "headless":"true",
       "boot_command": [
         "<esc>",
         "<wait>linux inst.ks=hd:/dev/fd0:ks.cfg<enter>"
